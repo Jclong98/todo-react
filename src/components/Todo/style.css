@@ -1,0 +1,26 @@
+.todo {
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo p {
+  margin: 0;
+}
+
+.todo .handle {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  cursor: grab;
+}
+
+.todo:hover .handle {
+  opacity: 1;
+}
+
+.todo.complete .todo__text {
+  text-decoration: line-through;
+}
