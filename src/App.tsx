@@ -1,22 +1,45 @@
+import { useLocalStorage } from 'usehooks-ts'
 import { ReactSortable } from 'react-sortablejs'
 
-import { Todo } from './components/Todo'
+import { Header } from './components/Header'
 import { AddTodoForm } from './components/AddTodoForm'
+import { Todo } from './components/Todo'
+import { Footer } from './components/Footer'
+import { FilterRadio } from './components/FilterRadio'
 
 import { useTodos } from './hooks/useTodos'
 
+import { FilterType, Todo as TodoType } from './types'
+
 function App() {
-  const { todos, setTodos, addTodo, removeTodo, toggleTodo } = useTodos()
+  const { todos, setTodos, addTodo, removeTodo, toggleTodo, clearCompleted } =
+    useTodos()
+
+  const [filter, setFilter] = useLocalStorage<FilterType>('filter', 'all')
+
+  const isVisible = (todo: TodoType) => {
+    switch (filter) {
+      case 'all':
+        return true
+      case 'active':
+        return !todo.complete
+      case 'completed':
+        return todo.complete
+      default:
+        return false
+    }
+  }
 
   return (
     <div>
-      <h1>React Todo App</h1>
+      <Header />
 
       <AddTodoForm onSubmit={addTodo} />
 
       <ReactSortable list={todos} setList={setTodos} animation={200}>
-        {todos.map(item => (
+        {todos.map((item) => (
           <Todo
+            style={isVisible(item) ? {} : { display: 'none' }}
             key={item.id}
             {...item}
             onRemove={removeTodo}
@@ -24,6 +47,10 @@ function App() {
           />
         ))}
       </ReactSortable>
+
+      <Footer clearCompleted={clearCompleted} todos={todos}>
+        <FilterRadio filter={filter} onChange={setFilter} />
+      </Footer>
     </div>
   )
 }

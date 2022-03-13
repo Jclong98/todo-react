@@ -6,6 +6,7 @@ interface Props {
   complete: boolean
   onRemove: (id: number) => void
   onToggleComplete: (id: number) => void
+  style?: React.CSSProperties
 }
 
 export function Todo({
@@ -14,6 +15,7 @@ export function Todo({
   onRemove,
   complete,
   onToggleComplete,
+  style,
 }: Props) {
   const classes = ['todo']
 
@@ -22,7 +24,7 @@ export function Todo({
   }
 
   return (
-    <label className={classes.join(' ')} key={id}>
+    <label className={classes.join(' ')} key={id} style={style}>
       <p>
         <span className="handle">⠿</span>
         <input

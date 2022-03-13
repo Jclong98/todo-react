@@ -1,0 +1,11 @@
+html {
+  color: #000;
+  background-color: #fff;
+  --border-color: rgba(0, 0, 0, 0.5);
+}
+
+html.dark {
+  color: #fff;
+  background-color: #222;
+  --border-color: rgba(255, 255, 255, 0.5);
+}

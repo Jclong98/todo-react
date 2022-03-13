@@ -14,12 +14,12 @@ export function useTodos() {
   ])
 
   const removeTodo = (id: number) => {
-    setTodos(todos.filter(item => item.id !== id))
+    setTodos(todos.filter((item) => item.id !== id))
   }
 
   const toggleTodo = (id: number) => {
     setTodos(
-      todos.map(item => {
+      todos.map((item) => {
         if (item.id === id) {
           item.complete = !item.complete
         }
@@ -37,11 +37,16 @@ export function useTodos() {
     setTodos([newTodo, ...todos])
   }
 
+  const clearCompleted = () => {
+    setTodos(todos.filter((item) => !item.complete))
+  }
+
   return {
     todos,
     removeTodo,
     toggleTodo,
     addTodo,
     setTodos,
+    clearCompleted,
   }
 }
