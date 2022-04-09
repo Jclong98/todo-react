@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/jclong98/todo-vue](https://github.com/jclong98/todo-vue)
-<!-- - Live Site URL: [https://gleaming-alpaca-bd8b47.netlify.app/](https://gleaming-alpaca-bd8b47.netlify.app/) -->
+- Solution URL: [https://github.com/jclong98/todo-react](https://github.com/jclong98/todo-react)
+- Live Site URL: [https://dreamy-bavarois-f624c2.netlify.app/](https://dreamy-bavarois-f624c2.netlify.app/)
 
 ## My process
 
