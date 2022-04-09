@@ -1,0 +1,51 @@
+.filter-radio {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4em;
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: white;
+}
+
+html.dark .filter-radio {
+  background-color: var(--very-dark-desaturated-blue);
+}
+
+@media (min-width: 600px) {
+  .filter-radio {
+    position: relative;
+    bottom: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+.filter-radio {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-weight: bold;
+  /* color: var(--light-grayish-blue); */
+}
+
+html.dark .filter-radio {
+  color: var(--dark-grayish-blue);
+}
+
+.filter-radio label:hover {
+  cursor: pointer;
+  color: var(--very-dark-grayish-blue);
+}
+
+html.dark .filter-radio label:hover {
+  color: var(--very-light-grayish-blue);
+}
+
+.filter-radio input[type='radio'] {
+  display: none;
+}
+
+.filter-radio input[type='radio']:checked + span {
+  color: var(--bright-blue);
+}

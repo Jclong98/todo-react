@@ -1,0 +1,10 @@
+.dark-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-toggle-btn img {
+  width: 1.5em;
+  height: 1.5em;
+}

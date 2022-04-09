@@ -1,5 +1,3 @@
-import './style.css'
-
 import { useState } from 'react'
 
 interface Props {
@@ -16,15 +14,14 @@ export function AddTodoForm({ onSubmit }: Props) {
   }
 
   return (
-    <form className="add-todo-form" onSubmit={handleSubmit}>
+    <form className="add-todo-form card" onSubmit={handleSubmit}>
+      <div className="placeholder-check"></div>
       <input
         value={newTodoText}
-        onChange={e => setNewTodoText(e.target.value)}
-        placeholder="Add a todo"
-        name="newTodo"
+        onChange={(e) => setNewTodoText(e.target.value)}
+        placeholder="Create a new todo..."
+        type="text"
       />
-
-      <button>Add</button>
     </form>
   )
 }

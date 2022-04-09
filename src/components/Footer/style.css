@@ -1,8 +1,26 @@
-footer {
-  border: 1px solid gray;
-  padding: 10px;
+.todo-footer {
+  padding: 0.5em 1em;
   border-radius: 4px;
   margin: 10px 0;
   display: flex;
   justify-content: space-between;
+  font-size: 14px;
+  color: var(--dark-grayish-blue);
+  position: relative;
+}
+
+.todo-footer > * {
+  flex-basis: 100%;
+}
+
+.clear-btn {
+  text-align: right;
+}
+
+.clear-btn:hover {
+  color: var(--very-dark-grayish-blue);
+}
+
+html.dark .clear-btn:hover {
+  color: var(--very-light-grayish-blue);
 }

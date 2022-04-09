@@ -1,11 +1,115 @@
 html {
-  color: #000;
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(
+    120deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue: hsl(233, 11%, 84%);
+  --dark-grayish-blue: hsl(236, 9%, 61%);
+  --very-dark-grayish-blue: hsl(235, 19%, 35%);
+
+  color: var(--very-dark-grayish-blue);
   background-color: #fff;
-  --border-color: rgba(0, 0, 0, 0.5);
+
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 13px;
+
+  transition: all 0.2s ease-in-out;
 }
 
 html.dark {
-  color: #fff;
-  background-color: #222;
-  --border-color: rgba(255, 255, 255, 0.5);
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --light-grayish-blue: hsl(234, 39%, 85%);
+  --light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --very-dark-grayish-blue: hsl(237, 14%, 26%);
+
+  background-color: var(--very-dark-blue);
+  color: var(--light-grayish-blue);
+}
+
+html {
+  background-image: url(/images/bg-mobile-light.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  background-size: contain;
+  background-color: var(--very-light-grayish-blue);
+}
+
+html.dark {
+  background-image: url(/images/bg-mobile-dark.jpg);
+}
+
+@media (min-width: 600px) {
+  html {
+    background-image: url(/images/bg-desktop-light.jpg);
+    font-size: 18px;
+  }
+  html.dark {
+    background-image: url(/images/bg-desktop-dark.jpg);
+  }
+}
+
+.card {
+  border-radius: 5px;
+  background-color: white;
+}
+
+html.dark .card {
+  background-color: var(--very-dark-desaturated-blue);
+}
+
+a {
+  color: var(--bright-blue);
+  text-decoration: none;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.todo-group {
+  margin-top: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 80px;
+}
+
+#todo-footer {
+  position: relative;
+  margin-bottom: 6em;
+}
+
+#filter-radio {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4em;
+  padding: 0.5em;
+}
+
+@media (min-width: 600px) {
+  #todo-footer {
+    margin-bottom: 0;
+  }
+
+  #filter-radio {
+    position: relative;
+    bottom: 0;
+    padding: 0;
+  }
+}
+
+.explaination-footer {
+  margin-top: 50px;
+  text-align: center;
+  color: var(--dark-grayish-blue);
+  font-size: 14px;
 }

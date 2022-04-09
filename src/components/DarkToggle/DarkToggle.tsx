@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { useDarkMode } from 'usehooks-ts'
 
 export function DarkToggle() {
-
   const { isDarkMode, toggle } = useDarkMode()
 
   // when isDarkMode changes, add or remove dark from the documentElelemt (<html>)
@@ -14,9 +13,15 @@ export function DarkToggle() {
     }
   }, [isDarkMode])
 
-  const icon = isDarkMode ? '🌞' : '🌚'
+  const icon = isDarkMode ? '/images/icon-sun.svg' : '/images/icon-moon.svg'
 
   return (
-    <button onClick={toggle}>{ icon }</button>
+    <button
+      onClick={toggle}
+      title="Toggle Dark Mode"
+      className="dark-toggle-btn"
+    >
+      <img src={icon} alt="Toggle Dark Mode" />
+    </button>
   )
 }

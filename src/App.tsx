@@ -31,26 +31,41 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="container">
       <Header />
 
       <AddTodoForm onSubmit={addTodo} />
 
-      <ReactSortable list={todos} setList={setTodos} animation={200}>
-        {todos.map((item) => (
-          <Todo
-            style={isVisible(item) ? {} : { display: 'none' }}
-            key={item.id}
-            {...item}
-            onRemove={removeTodo}
-            onToggleComplete={toggleTodo}
-          />
-        ))}
-      </ReactSortable>
+      <main className="todo-group card">
+        <ReactSortable list={todos} setList={setTodos} animation={200}>
+          {todos.map((item) => (
+            <Todo
+              style={isVisible(item) ? {} : { display: 'none' }}
+              key={item.id}
+              {...item}
+              onRemove={removeTodo}
+              onToggleComplete={toggleTodo}
+            />
+          ))}
+        </ReactSortable>
 
-      <Footer clearCompleted={clearCompleted} todos={todos}>
-        <FilterRadio filter={filter} onChange={setFilter} />
-      </Footer>
+        <Footer clearCompleted={clearCompleted} todos={todos}>
+          <FilterRadio filter={filter} onChange={setFilter} />
+        </Footer>
+      </main>
+
+      <footer className="explaination-footer">
+        <p>Drag and drop to reorder List</p>
+
+        <p>
+          Challenge by{' '}
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+            Frontend Mentor
+          </a>
+          . Coded by{' '}
+          <a href="https://github.com/jclong98/todo-react">Jacob Long</a>.
+        </p>
+      </footer>
     </div>
   )
 }

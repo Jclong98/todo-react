@@ -26,7 +26,7 @@ export function FilterRadio({ filter, onChange }: Props) {
   }
 
   return (
-    <div>
+    <div className="filter-radio">
       {filterItems.map((item) => (
         <label key={item.value}>
           <input
@@ -36,7 +36,7 @@ export function FilterRadio({ filter, onChange }: Props) {
             onChange={onFilterChange}
             checked={filter == item.value}
           />
-          {item.label}
+          <span>{item.label}</span>
         </label>
       ))}
     </div>
