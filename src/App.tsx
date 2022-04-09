@@ -41,7 +41,7 @@ function App() {
           list={todos}
           setList={setTodos}
           animation={200}
-          delay={500}
+          delay={100}
           delayOnTouchOnly={true}
         >
           {todos.map(item => (
