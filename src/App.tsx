@@ -37,8 +37,14 @@ function App() {
       <AddTodoForm onSubmit={addTodo} />
 
       <main className="todo-group card">
-        <ReactSortable list={todos} setList={setTodos} animation={200}>
-          {todos.map((item) => (
+        <ReactSortable
+          list={todos}
+          setList={setTodos}
+          animation={200}
+          delay={500}
+          delayOnTouchOnly={true}
+        >
+          {todos.map(item => (
             <Todo
               style={isVisible(item) ? {} : { display: 'none' }}
               key={item.id}
