@@ -43,4 +43,5 @@ html.dark .check label::before {
 
 .check label:hover {
   background-image: var(--check-background);
+  cursor: pointer;
 }
