@@ -34,30 +34,32 @@ function App() {
     <div className="container">
       <Header />
 
-      <AddTodoForm onSubmit={addTodo} />
+      <main>
+        <AddTodoForm onSubmit={addTodo} />
 
-      <main className="todo-group card">
-        <ReactSortable
-          list={todos}
-          setList={setTodos}
-          animation={200}
-          delay={100}
-          delayOnTouchOnly={true}
-        >
-          {todos.map(item => (
-            <Todo
-              style={isVisible(item) ? {} : { display: 'none' }}
-              key={item.id}
-              {...item}
-              onRemove={removeTodo}
-              onToggleComplete={toggleTodo}
-            />
-          ))}
-        </ReactSortable>
+        <div className="todo-group card">
+          <ReactSortable
+            list={todos}
+            setList={setTodos}
+            animation={200}
+            delay={100}
+            delayOnTouchOnly={true}
+          >
+            {todos.map(item => (
+              <Todo
+                style={isVisible(item) ? {} : { display: 'none' }}
+                key={item.id}
+                {...item}
+                onRemove={removeTodo}
+                onToggleComplete={toggleTodo}
+              />
+            ))}
+          </ReactSortable>
 
-        <Footer clearCompleted={clearCompleted} todos={todos}>
-          <FilterRadio filter={filter} onChange={setFilter} />
-        </Footer>
+          <Footer clearCompleted={clearCompleted} todos={todos}>
+            <FilterRadio filter={filter} onChange={setFilter} />
+          </Footer>
+        </div>
       </main>
 
       <footer className="explaination-footer">

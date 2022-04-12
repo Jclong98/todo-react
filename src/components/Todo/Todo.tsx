@@ -24,7 +24,7 @@ export function Todo({
   }
 
   return (
-    <label className={classes.join(' ')} key={id} style={style}>
+    <div className={classes.join(' ')} key={id} style={style}>
       {/* <input
         type="checkbox"
         name={`todo-${id}`}
@@ -41,6 +41,6 @@ export function Todo({
       >
         <img src="/images/icon-cross.svg" alt="remove button" />
       </button>
-    </label>
+    </div>
   )
 }
