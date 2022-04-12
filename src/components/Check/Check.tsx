@@ -10,7 +10,7 @@ export function Check({ checked, onChange }: Props) {
     <div className="check">
       <label className={checked ? 'checked' : ''}>
         <input type="checkbox" checked={checked} onChange={onChange} />
-        <img v-show="value" src="/images/icon-check.svg" alt="check icon" />
+        <img src="/images/icon-check.svg" alt="check icon" />
       </label>
     </div>
   )
